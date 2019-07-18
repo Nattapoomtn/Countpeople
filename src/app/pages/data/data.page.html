@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button color="light"></ion-menu-button>
+          </ion-buttons>
+      <ion-title>
+        <ion-text color="light">
+          <ion-text color="light" class="fw700">Data</ion-text>
+        </ion-text>
+      </ion-title>
+    </ion-toolbar>
+   
+  <ion-toolbar color="primary">
+   <ion-row>
+     <ion-col size="5">
+        <ion-searchbar
+        [(ngModel)]="search" 
+        (ionChange)="getItems($event)"
+      ></ion-searchbar>
+    <!-- <ion-searchbar placeholder="search" [(ngModel)]="keyword" (ionChange)="filterItems($event)" debounce="300" class="search">
+   
+    </ion-searchbar> -->
+  </ion-col>
+<ion-col size="3">
+   
+
+        <ion-datetime  display-format="YYYY/MM/DD" picker-format="YYYY MM DD" [(ngModel)]="startD"  (ionChange)="getItems($event)" placeholder="start" class="start" [min]="minD" [max]="maxD"></ion-datetime>
+       
+  </ion-col>
+  <ion-col size="3">
+    
+          <ion-datetime display-format="YYYY/MM/DD" picker-format="YYYY MM DD" [(ngModel)]="endD" (ionChange)="getItems($event)" placeholder="end" class="end" [min]="minD" [max]="maxD"></ion-datetime>
+      
+    </ion-col>
+    
+    <!-- <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
+        <ion-icon name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-row>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin class="no-radius">
+    </ion-card>
+      <div class="scrollbox"> 
+          <div class="scrollbox-content">
+          <ion-item *ngFor="let table of list"  class="tableA"> <!--(click)="editTable(table)"-->
+              <ion-grid>
+                  <ion-row class="sss">
+                
+                      <ion-col class="flexrow" style="min-width: 100px" align-items-start>   {{table.nDayOfWeek}}</ion-col>
+                      <ion-col  col-8 class="flexrow" style="min-width: 100px" >{{table.date}}</ion-col>
+                      <ion-col col-2 class="flex-row" style="min-width: 100px">  <ion-checkbox color="primary" [(ngModel)]="table.check" (ionChange)="check(table)" ></ion-checkbox></ion-col>
+                  
+                      
+                  </ion-row>
+              </ion-grid>
+         
+         
+      
+      
+          </ion-item>
+      </div>
+     
+      <ion-fab class="buttons"  >
+          <ion-fab-button>
+            <ion-icon name="settings" ></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="top">
+              <ion-fab-button><ion-icon name="checkmark" (click)="showTable()" class="fabB"></ion-icon></ion-fab-button>
+            <ion-fab-button><ion-icon name="trash" (click)="deleteTable()" class="fabB"></ion-icon></ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+      </div>
+      
+
+        <!-- <h2 no-margin class="fw500 no-margin">
+          <ion-text color="dark">Alert / Toast test</ion-text>
+        </h2>
+
+        <p class="text-11x no-margin">
+          <ion-text  color="primary">{{yourLocation}}</ion-text>
+        </p> -->
+      
+      <!-- <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
+        Location
+        <ion-icon name="locate"></ion-icon>
+      </ion-button> -->
+ 
+      
+ 

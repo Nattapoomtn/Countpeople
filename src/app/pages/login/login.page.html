@@ -1,0 +1,89 @@
+<ion-content class="cBg">
+    <ion-note color="secondary" class="head"> People Counting System</ion-note>
+  <ion-card clss="card">
+  <ion-card-content padding class="animated fadeIn login auth-page">
+   <ion-row>
+     <ion-col>
+      <ion-img style="width: 80px; height: 80px;" src="../../assets/img/user.png" class="image">  </ion-img>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col >
+      <ion-note color="secondary" class="text">Login</ion-note>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+    <ion-col >
+      <ion-item no-padding class="iD">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+           Username
+        </ion-label>
+        <ion-input color="light" type="email" [(ngModel)]="ID"></ion-input>
+   </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col >
+      <ion-item no-padding class="password">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="light" type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08">
+        <!-- <ion-text color="warning">
+          Required Field
+        </ion-text> -->
+        </p>
+    </ion-col>
+  </ion-row>
+
+  <ion-button icon-left  class="sG" expand="full"   (click)="login()"  >
+    <ion-icon name="log-in"></ion-icon>
+    Signin
+  </ion-button>
+  </ion-card-content>
+  </ion-card>
+  </ion-content>
+
+    <!-- <form [formGroup]="onLoginForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+        <ion-text color="warning">
+          Required Field
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08" *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">
+        <ion-text color="warning">
+          Required Field
+        </ion-text>
+        </p>
+    </form>
+
+    
+
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="goToHome()" [disabled]="!onLoginForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Signin
+      </ion-button>
+
+  
+
+ -->

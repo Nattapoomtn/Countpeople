@@ -1,0 +1,79 @@
+:host {
+    ion-content {
+        --background:("../../../assets/img/backG.jpg")
+    }
+    ion-button{
+        --background:#303952;
+    }
+    ion-card{
+        width: 50%!important;
+    background: white;
+    top:20%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+}
+.head{
+    margin: 0;
+    size: 20%;
+    position: absolute;
+    margin-top:5%;
+    font-size: 220%;
+    left: 50%;
+    margin-right: -50%;
+    color:white;
+    transform: translate(-50%, -50%)
+}
+.paz {
+    position: relative;
+    z-index: 10;
+
+}
+.card {
+    width: 50%!important;
+    background-color: #303952;;
+ 
+}
+.cBg{
+    background: #303952;;
+   
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:100%; 
+    height:auto; 
+}
+.text{
+    margin: 0;
+    size: 20%;
+    position: absolute;
+    margin-top:10%;
+    font-size: 220%;
+    left: 50%;
+    margin-right: -50%;
+    color:#303952;
+    transform: translate(-50%, -50%)
+}
+.iD{
+    margin-top:10%;
+
+
+   
+}
+.password{
+    margin-top:4%
+}
+
+.sG{
+
+    background-color: #FFA534!important;
+    background: #FFA534!important;
+    margin-top: 5%
+}

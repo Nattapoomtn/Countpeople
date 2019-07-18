@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Chart</ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-grid class="gridhome">
+  <ion-row>
+    <ion-col size="2.8">
+      <div>
+        <ion-card style="width: 200px; height: 180px;" class="bg-white">
+          <ion-card-header>
+            <ion-img width="4%" height="4%" class="image" src="../../assets/img/in.png"></ion-img>
+            <ion-card-content class="count">
+
+              <ion-row>
+
+                <ion-col class="nIN">
+                  {{totalIn}}
+                </ion-col>
+
+              </ion-row>
+              <hr class="boderH">
+              <ion-label class="tHead">
+                In
+              </ion-label>
+            </ion-card-content>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </ion-col>
+    <ion-col size="2.8">
+      <div>
+        <ion-card style="width: 200px; height: 180px;" class="bg-white">
+          <ion-card-header>
+            <ion-img width="4%" height="4%" class="image" src="../../assets/img/out.png"></ion-img>
+            <ion-card-content class="count">
+
+              <ion-row>
+
+                <ion-col class="nIN">
+                  {{totalOut}}
+                </ion-col>
+
+              </ion-row>
+              <hr class="boderH">
+              <ion-label class="tHead">
+                Out
+              </ion-label>
+            </ion-card-content>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </ion-col>
+    <ion-col size="2.8">
+      <div>
+        <ion-card style="width: 200px; height: 200px;" class="bg-white">
+          <ion-card-header>
+            <ion-card-subtitle>Peak Hour</ion-card-subtitle>
+
+            <ion-item *ngFor="let time of peakhour">
+              <ion-row>
+                <ion-col>
+                  {{time}}
+                </ion-col>
+
+              </ion-row>
+
+            </ion-item>
+         
+          </ion-card-header>
+          <ion-fab vertical="top" horizontal="end" slot="fixed" class="fabB" size="small" *ngIf="checkPeak">
+            <ion-fab-button size="small">
+              <ion-icon name="add" (click)="popOver($event)"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-card>
+      </div>
+    </ion-col>
+    <ion-col size="3">
+      <div>
+        <ion-card style="width: 300px; height: 200px;" class="bg-white">
+          <ion-card-header>
+            <ion-card-subtitle>Pie Chart</ion-card-subtitle>
+            <div class="chart">
+              <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+                [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors"
+                [legend]="pieChartLegend">
+              </canvas>
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card style="width: 1050px; height: 500px;" class="line">
+
+        <ion-card-header class="fontCardHeader">
+          People/Time Date: {{now}}
+        </ion-card-header>
+
+
+        <div class="flex">
+          <div class="flex-item">
+            <div style="display: block;">
+        <canvas baseChart width="1050" height="400" *ngIf="lineChartData" [datasets]="lineChartData"
+          [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColours" [legend]="lineChartLegend"
+          [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+
+            </div>
+          </div>
+        </div>
+
+
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+
+
+</ion-grid>

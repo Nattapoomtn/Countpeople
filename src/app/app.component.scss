@@ -1,0 +1,32 @@
+:host {
+    ion-content {
+        --background: #303952;
+    }
+
+    ion-list {
+        &.list-md {
+            padding: 0;
+        }
+        border-color: white
+    }
+    ion-label{
+        
+            border-color: white
+        
+    }
+}
+.label{
+    border-color: white
+}
+.item-inner{
+    border-color: white
+}
+.statusServer{
+    margin-right: 20px;
+}
+.colorServer{
+    color:#4cd137
+}
+.colorServerD{
+    color: #ff3838
+}
